@@ -33,6 +33,7 @@ function start() {
     $("#time-left").removeClass("blink");
     alarm.pause();
   }
+  localStorage["time"] = $("#ddl").val();
 }
 
 function stop() {
@@ -40,9 +41,13 @@ function stop() {
   $("#time-left").val(null);
   $("#time-left").removeClass("blink");
   alarm.pause();
+  localStorage["time"] = $("#ddl").val();
 }
 
 $(() => {
+  if(localStorage["time"])
+    $("#ddl").val(localStorage["time"]);
+  
   $("#btn-start").click(start);
   $("#btn-stop").click(stop);
   $("#ddl").change(stop);
