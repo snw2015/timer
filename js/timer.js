@@ -20,6 +20,9 @@ function updateTime() {
     if (hourLeft < 0 || hourLeft == 0 && minuteLeft == 0) {
       $("#time-left").val("00:00");
       $("#time-left").addClass("blink");
+      if (alarm.paused) {
+        alarm.currentTime = 0;
+      }
       alarm.play();
     } else {
       $("#time-left").val(`${(""+hourLeft).padStart(2, "0")}:${(""+minuteLeft).padStart(2, "0")}`);
@@ -47,7 +50,7 @@ function stop() {
 $(() => {
   if(localStorage["time"])
     $("#ddl").val(localStorage["time"]);
-  
+
   $("#btn-start").click(start);
   $("#btn-stop").click(stop);
   $("#ddl").change(stop);
