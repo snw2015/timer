@@ -47,6 +47,13 @@ function stop() {
   localStorage["time"] = $("#ddl").val();
 }
 
+function now() {
+  date = new Date();
+  hour = date.getHours();
+  minute = date.getMinutes();
+  $("#ddl").val(`${(""+hour).padStart(2, "0")}:${(""+minute).padStart(2, "0")}`);
+}
+
 $(() => {
   if(localStorage["time"])
     $("#ddl").val(localStorage["time"]);
@@ -54,6 +61,7 @@ $(() => {
   $("#btn-start").click(start);
   $("#btn-stop").click(stop);
   $("#ddl").change(stop);
+  $("#ddl").dblclick(now);
 
   setInterval(updateTime, 1000);
 });
