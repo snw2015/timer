@@ -23,25 +23,74 @@
 <body>
   <div class="container bg-light" id="main">
     <div class="row">
-      <div class="col-md-2 align-self-center">
-        <span class="dark" contenteditable="true">演习</span>至
+      <div class="col-sm-3 align-self-center">
+        <span class="dark">现在是</span>
       </div>
-      <div class="col-md-2 align-self-center">
-        <input type="time" class="form-control" id="ddl">
+      <div class="col-sm-3 align-self-center">
+        <input type="time" class="form-control timer-view" id="time-now" readonly>
       </div>
-      <div class="col-sm-2 align-self-center">
-        <input type="button" class="form-control btn-lg btn-primary" id="btn-start" value="开始">
+      <div class="col-sm-3 align-self-center">
+        <span class="dark" id="time-zone"></span>
       </div>
     </div>
     <div class="row">
-      <div class="col-md-2 align-self-center">
+      <div class="col-sm-3 align-self-center">
+        <span class="dark" contenteditable="true" id="label-text">演习</span>至
+      </div>
+      <div class="col-sm-3 align-self-center">
+        <input type="time" class="form-control timer-view" id="time-ddl">
+      </div>
+      <div class="col-sm-3 align-self-center">
+        <input type="button" class="form-control btn btn-lg btn-primary" id="btn-start-and-stop" value="开始">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-3 align-self-center">
         <span class="dark">剩余</span>
       </div>
-      <div class="col-md-2 align-self-center">
-        <input type="time" class="form-control" id="time-left" disabled>
+      <div class="col-sm-3 align-self-center">
+        <input type="time" class="form-control timer-view" id="time-left" readonly>
       </div>
-      <div class="col-sm-2 align-self-center">
-        <input type="button" class="form-control btn-lg btn-danger" id="btn-stop" value="终止">
+      <div class="col-sm-3 align-self-center">
+        <input type="button" class="form-control btn btn-lg btn-secondary" id="btn-pause" value="暂停">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md align-self-center">
+        <div class="input-group">
+          <input type="button" class="btn-sm btn-secondary" id="sub-1" value="-">
+          <span class="input-group-text">1分</span>
+          <input type="button" class="btn-sm btn-secondary" id="add-1" value="+">
+        </div>
+      </div>
+      <div class="col-md align-self-center">
+        <div class="input-group">
+          <input type="button" class="btn-sm btn-secondary" id="sub-5" value="-">
+          <span class="input-group-text">5分</span>
+          <input type="button" class="btn-sm btn-secondary" id="add-5" value="+">
+        </div>
+      </div>
+      <div class="col-md align-self-center">
+        <div class="input-group">
+          <input type="button" class="btn-sm btn-secondary" id="sub-10" value="-">
+          <span class="input-group-text">10分</span>
+          <input type="button" class="btn-sm btn-secondary" id="add-10" value="+">
+        </div>
+      </div>
+      <div class="col-md align-self-center">
+        <div class="input-group">
+          <input type="button" class="btn-sm btn-secondary" id="sub-60" value="-">
+          <span class="input-group-text">60分</span>
+          <input type="button" class="btn-sm btn-secondary" id="add-60" value="+">
+        </div>
+      </div>
+      <div class="col-lg align-self-center">
+        <div class="input-group">
+          <input type="button" class="btn-sm btn-secondary" id="sub-any" value="-">
+          <input type="text" class="from-control" style="width:36px;font-size:1rem" id="input-any-num">
+          <span class="input-group-text">分</span>
+          <input type="button" class="btn-sm btn-secondary" id="add-any" value="+">
+        </div>
       </div>
     </div>
   </div>
